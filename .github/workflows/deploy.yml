@@ -67,10 +67,12 @@ jobs:
           script: |
             set -e
             cd ${{ secrets.DEPLOY_PATH }}
+            sudo chown -R ubuntu:ubuntu storage bootstrap/cache
+            rm -f bootstrap/cache/packages.php bootstrap/cache/services.php bootstrap/cache/config.php bootstrap/cache/routes-v7.php
             git pull origin main
             composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
-            php artisan optimize:clear
             php artisan migrate --force
+            php artisan optimize:clear
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
