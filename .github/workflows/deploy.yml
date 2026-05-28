@@ -18,7 +18,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.4'
+          php-version: '8.5'
           extensions: mbstring, xml, bcmath, sqlite3, pdo_sqlite
           coverage: none
 
@@ -65,12 +65,16 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
+            set -e
             cd ${{ secrets.DEPLOY_PATH }}
             git pull origin main
             composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+            php artisan optimize:clear
             php artisan migrate --force
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
             php artisan queue:restart
-            sudo systemctl reload php8.4-fpm || true
+            sudo chown -R www-data:www-data storage bootstrap/cache database
+            sudo chmod -R 775 storage bootstrap/cache
+            sudo systemctl reload php8.5-fpm || true
