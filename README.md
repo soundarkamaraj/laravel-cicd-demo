@@ -2,6 +2,8 @@
 
 A Laravel application with a CI/CD pipeline deploying to a remote server.
 
+**Live:** http://REDACTED
+
 ## Stack
 
 - **Framework:** Laravel (PHP 8.4)
