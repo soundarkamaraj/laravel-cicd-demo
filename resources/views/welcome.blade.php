@@ -1,1 +1,1 @@
-CI/CD works
+CI/CD works with Manual Deploy
