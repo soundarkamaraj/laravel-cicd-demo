@@ -2,11 +2,9 @@
 
 A Laravel application with a CI/CD pipeline deploying to a remote server.
 
-**Live:** http://REDACTED
-
 ## Stack
 
-- **Framework:** Laravel (PHP 8.4)
+- **Framework:** Laravel (PHP 8.5)
 - **Database:** SQLite (default, swap as needed)
 - **CI/CD:** GitHub Actions
 - **Deployment:** Remote server via SSH
