@@ -1,1 +1,1 @@
-CI/CD works with Manual Deploy
+CI/CD Manual Deploy Testing
