@@ -4,7 +4,7 @@ A Laravel application with a CI/CD pipeline deploying to a remote server.
 
 ## Stack
 
-- **Framework:** Laravel (PHP 8.5)
+- **Framework:** Laravel 12 (PHP 8.5)
 - **Database:** SQLite (default, swap as needed)
 - **CI/CD:** GitHub Actions
 - **Deployment:** Remote server via SSH
