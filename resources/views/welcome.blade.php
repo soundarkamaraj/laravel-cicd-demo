@@ -1,1 +1,1 @@
-CI/CD works with Manual Deploy
+CI/CD works with Manual Deploy with timer
