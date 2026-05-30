@@ -1,1 +1,1 @@
-CI/CD Manual Deploy Testing
+CI/CD Manual Deploy
